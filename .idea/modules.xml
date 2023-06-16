@@ -3,9 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/day13_static_inheritance/exercises/courseExercise/courseExercise.iml" filepath="$PROJECT_DIR$/day13_static_inheritance/exercises/courseExercise/courseExercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day14_polymorphism_package_final/exercises/exercise1/exercise1.iml" filepath="$PROJECT_DIR$/day14_polymorphism_package_final/exercises/exercise1/exercise1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day14_polymorphism_package_final/exercises/exercise2/exercise2.iml" filepath="$PROJECT_DIR$/day14_polymorphism_package_final/exercises/exercise2/exercise2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/java-notes-heima-courses.iml" filepath="$PROJECT_DIR$/.idea/java-notes-heima-courses.iml" />
       <module fileurl="file://$PROJECT_DIR$/day10_String/exercises/myString/myString.iml" filepath="$PROJECT_DIR$/day10_String/exercises/myString/myString.iml" />
       <module fileurl="file://$PROJECT_DIR$/day11_ArrayList/exercises/mylist/mylist.iml" filepath="$PROJECT_DIR$/day11_ArrayList/exercises/mylist/mylist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../simple-java-projects/studentManagementSystem/studentManagementSystem.iml" filepath="$PROJECT_DIR$/../simple-java-projects/studentManagementSystem/studentManagementSystem.iml" />
       <module fileurl="file://$PROJECT_DIR$/day10_String/exercises/test1/test1.iml" filepath="$PROJECT_DIR$/day10_String/exercises/test1/test1.iml" />
     </modules>
   </component>
