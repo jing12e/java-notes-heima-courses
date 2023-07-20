@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/day13_static_inheritance/exercises/courseExercise/courseExercise.iml" filepath="$PROJECT_DIR$/day13_static_inheritance/exercises/courseExercise/courseExercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/day15_abstract_interface_innerclass/exercise/courseexercise/courseexercise.iml" filepath="$PROJECT_DIR$/day15_abstract_interface_innerclass/exercise/courseexercise/courseexercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/day14_polymorphism_package_final/exercises/exercise1/exercise1.iml" filepath="$PROJECT_DIR$/day14_polymorphism_package_final/exercises/exercise1/exercise1.iml" />
       <module fileurl="file://$PROJECT_DIR$/day14_polymorphism_package_final/exercises/exercise2/exercise2.iml" filepath="$PROJECT_DIR$/day14_polymorphism_package_final/exercises/exercise2/exercise2.iml" />
       <module fileurl="file://$PROJECT_DIR$/day15_abstract_interface_innerclass/exercise/interface/interface.iml" filepath="$PROJECT_DIR$/day15_abstract_interface_innerclass/exercise/interface/interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/java-notes-heima-courses.iml" filepath="$PROJECT_DIR$/.idea/java-notes-heima-courses.iml" />
       <module fileurl="file://$PROJECT_DIR$/day19_Regex/exercises/myRegex/myRegex.iml" filepath="$PROJECT_DIR$/day19_Regex/exercises/myRegex/myRegex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day26-stream/exercises/myStream/myStream.iml" filepath="$PROJECT_DIR$/day26-stream/exercises/myStream/myStream.iml" />
       <module fileurl="file://$PROJECT_DIR$/day10_String/exercises/myString/myString.iml" filepath="$PROJECT_DIR$/day10_String/exercises/myString/myString.iml" />
       <module fileurl="file://$PROJECT_DIR$/day18_API/exercise/myapi/myapi.iml" filepath="$PROJECT_DIR$/day18_API/exercise/myapi/myapi.iml" />
       <module fileurl="file://$PROJECT_DIR$/day11_ArrayList/exercises/mylist/mylist.iml" filepath="$PROJECT_DIR$/day11_ArrayList/exercises/mylist/mylist.iml" />
