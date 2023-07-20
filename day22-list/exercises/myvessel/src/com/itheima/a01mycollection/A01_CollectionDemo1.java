@@ -42,7 +42,7 @@ public class A01_CollectionDemo1 {
         //细节1：因为Collection里面定义的是共性的方法，所以此时不能通过索引进行删除。只能通过元素的对象进行删除。
         //细节2：方法会有一个布尔类型的返回值，删除成功返回true，删除失败返回false
         //如果要删除的元素不存在，就会删除失败。
-        System.out.println(coll.remove(0));
+        System.out.println(coll.remove("aaa"));
         System.out.println(coll);
 
 

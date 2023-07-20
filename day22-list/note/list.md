@@ -1,36 +1,33 @@
 ## 1.Collection集合
 
-### 1.1数组和集合的区别【理解】
+### 1.1 数组和集合的区别【理解】
 
 - 相同点
 
   都是容器,可以存储多个数据
-
 - 不同点
 
   - 数组的长度是不可变的,集合的长度是可变的
-
   - 数组可以存基本数据类型和引用数据类型
 
     集合只能存引用数据类型,如果要存基本数据类型,需要存对应的包装类
 
-### 1.2集合类体系结构【理解】
+### 1.2 集合类体系结构【理解】
 
-![01_集合类体系结构图](/img/01_%E9%9B%86%E5%90%88%E7%B1%BB%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9B%BE.png)
+![01_集合类体系结构图](01.png)
 
-### 1.3Collection 集合概述和使用【应用】
+### 1.3 Collection 集合概述和使用【应用】
 
 - Collection集合概述
 
   - 是单例集合的顶层接口,它表示一组对象,这些对象也称为Collection的元素
   - JDK 不提供此接口的任何直接实现.它提供更具体的子接口(如Set和List)实现
-
 - 创建Collection集合的对象
 
   - 多态的方式
   - 具体的实现类ArrayList
-
 - Collection集合常用方法
+
 
   | 方法名                     | 说明                               |
   | :------------------------- | :--------------------------------- |
@@ -42,18 +39,16 @@
   | boolean isEmpty()          | 判断集合是否为空                   |
   | int   size()               | 集合的长度，也就是集合中元素的个数 |
 
-### 1.4Collection集合的遍历【应用】
+### 1.4 Collection集合的遍历【应用】
 
 - 迭代器介绍
 
   - 迭代器,集合的专用遍历方式
   - Iterator<E> iterator(): 返回此集合中元素的迭代器,通过集合对象的iterator()方法得到
-
 - Iterator中的常用方法
 
-  ​	boolean hasNext(): 判断当前位置是否有元素可以被取出
-  ​	E next(): 获取当前位置的元素,将迭代器对象移向下一个索引位置
-
+  - boolean hasNext(): 判断当前位置是否有元素可以被取出
+  - E next(): 获取当前位置的元素,将迭代器对象移向下一个索引位置
 - Collection集合的遍历
 
   ```java
@@ -61,16 +56,16 @@
       public static void main(String[] args) {
           //创建集合对象
           Collection<String> c = new ArrayList<>();
-  
+
           //添加元素
           c.add("hello");
           c.add("world");
           c.add("java");
           c.add("javaee");
-  
+
           //Iterator<E> iterator()：返回此集合中元素的迭代器，通过集合的iterator()方法得到
           Iterator<String> it = c.iterator();
-  
+
           //用while循环改进元素的判断和获取
           while (it.hasNext()) {
               String s = it.next();
@@ -79,10 +74,9 @@
       }
   }
   ```
-
 - 迭代器中删除的方法
 
-  ​	void remove(): 删除迭代器对象当前指向的元素
+  - void remove(): 删除迭代器对象当前指向的元素
 
   ```java
   public class IteratorDemo2 {
@@ -93,7 +87,7 @@
           list.add("b");
           list.add("c");
           list.add("d");
-  
+
           Iterator<String> it = list.iterator();
           while(it.hasNext()){
               String s = it.next();
@@ -107,22 +101,26 @@
   }
   ```
 
-### 1.5增强for循环【应用】
+### 1.5 增强for循环【应用】
 
 - 介绍
 
   - 它是JDK5之后出现的,其内部原理是一个Iterator迭代器
   - 实现Iterable接口的类才可以使用迭代器和增强for
   - 简化数组和Collection集合的遍历
-
 - 格式
 
-  ​	for(集合/数组中元素的数据类型 变量名 :  集合/数组名) {
+  ```
+  for(集合/数组中元素的数据类型 变量名 :  集合/数组名) {
+  ```
 
-  ​		// 已经将当前遍历到的元素封装到变量中了,直接使用变量即可
+  ```
+  // 已经将当前遍历到的元素封装到变量中了,直接使用变量即可
+  ```
 
-  ​	}
-
+  ```
+  }
+  ```
 - 代码
 
   ```java
@@ -135,7 +133,7 @@
           list.add("d");
           list.add("e");
           list.add("f");
-  
+
           //1,数据类型一定是集合或者数组中元素的类型
           //2,str仅仅是一个变量名而已,在循环的过程中,依次表示集合或者数组中的每一个元素
           //3,list就是要遍历的集合或者数组
@@ -148,7 +146,7 @@
 
 ## 2.List集合
 
-### 2.1List集合的概述和特点【记忆】
+### 2.1 List集合的概述和特点【记忆】
 
 - List集合的概述
   - 有序集合,这里的有序指的是存取顺序
@@ -159,9 +157,10 @@
   - 可以重复
   - 有索引
 
-### 2.2List集合的特有方法【应用】
+### 2.2 List集合的特有方法【应用】
 
 - 方法介绍
+
 
   | 方法名                          | 描述                                   |
   | ------------------------------- | -------------------------------------- |
@@ -169,7 +168,6 @@
   | E remove(int   index)           | 删除指定索引处的元素，返回被删除的元素 |
   | E set(int index,E   element)    | 修改指定索引处的元素，返回被修改的元素 |
   | E get(int   index)              | 返回指定索引处的元素                   |
-
 - 示例代码
 
   ```java
@@ -184,13 +182,13 @@
           //method3(list);
           //method4(list);
       }
-  
+
       private static void method4(List<String> list) {
           //        E get(int index)		返回指定索引处的元素
           String s = list.get(0);
           System.out.println(s);
       }
-  
+
       private static void method3(List<String> list) {
           //        E set(int index,E element)	修改指定索引处的元素，返回被修改的元素
           //被替换的那个元素,在集合中就不存在了.
@@ -198,7 +196,7 @@
           System.out.println(result);
           System.out.println(list);
       }
-  
+
       private static void method2(List<String> list) {
           //        E remove(int index)		删除指定索引处的元素，返回被删除的元素
           //在List集合中有两个删除的方法
@@ -208,7 +206,7 @@
           System.out.println(s);
           System.out.println(list);
       }
-  
+
       private static void method1(List<String> list) {
           //        void add(int index,E element)	在此集合中的指定位置插入指定的元素
           //原来位置上的元素往后挪一个索引.
@@ -220,41 +218,51 @@
 
 ## 3.数据结构
 
-### 3.1数据结构之栈和队列【记忆】
+### 3.1 数据结构之栈和队列【记忆】
 
 - 栈结构
 
-  ​	先进后出
-
+  ```
+  先进后出
+  ```
 - 队列结构
 
-  ​	先进先出
+  ```
+  先进先出
+  ```
 
-### 3.2数据结构之数组和链表【记忆】
+### 3.2 数据结构之数组和链表【记忆】
 
 - 数组结构
 
-  ​	查询快、增删慢
-
+  ```
+  查询快、增删慢
+  ```
 - 队列结构
 
-  ​	查询慢、增删快
+  ```
+  查询慢、增删快
+  ```
 
 ## 4.List集合的实现类
 
-### 4.1List集合子类的特点【记忆】
+### 4.1List 集合子类的特点【记忆】
 
 - ArrayList集合
 
-  ​	底层是数组结构实现，查询快、增删慢
-
+  ```
+  底层是数组结构实现，查询快、增删慢
+  ```
 - LinkedList集合
 
-  ​	底层是链表结构实现，查询慢、增删快
+  ```
+  底层是双向链表结构实现，查询慢、增删快
+  ```
 
-### 4.2LinkedList集合的特有功能【应用】
+### 4.2LinkedList 集合的特有功能【应用】
 
 - 特有方法
+
 
   | 方法名                    | 说明                             |
   | ------------------------- | -------------------------------- |
@@ -264,7 +272,6 @@
   | public   E getLast()      | 返回此列表中的最后一个元素       |
   | public E removeFirst()    | 从此列表中删除并返回第一个元素   |
   | public   E removeLast()   | 从此列表中删除并返回最后一个元素 |
-
 - 示例代码
 
   ```java
@@ -276,42 +283,42 @@
           list.add("ccc");
   //        public void addFirst(E e)	在该列表开头插入指定的元素
           //method1(list);
-  
+
   //        public void addLast(E e)	将指定的元素追加到此列表的末尾
           //method2(list);
-  
+
   //        public E getFirst()		返回此列表中的第一个元素
   //        public E getLast()		返回此列表中的最后一个元素
           //method3(list);
-  
+
   //        public E removeFirst()		从此列表中删除并返回第一个元素
   //        public E removeLast()		从此列表中删除并返回最后一个元素
           //method4(list);
-        
+
       }
-  
+
       private static void method4(LinkedList<String> list) {
           String first = list.removeFirst();
           System.out.println(first);
-  
+
           String last = list.removeLast();
           System.out.println(last);
-  
+
           System.out.println(list);
       }
-  
+
       private static void method3(LinkedList<String> list) {
           String first = list.getFirst();
           String last = list.getLast();
           System.out.println(first);
           System.out.println(last);
       }
-  
+
       private static void method2(LinkedList<String> list) {
           list.addLast("www");
           System.out.println(list);
       }
-  
+
       private static void method1(LinkedList<String> list) {
           list.addFirst("qqq");
           System.out.println(list);
@@ -321,21 +328,45 @@
 
 ## 5.泛型
 
-### 5.1泛型概述
+### 5.1 泛型概述
 
 - 泛型的介绍
 
   泛型是JDK5中引入的特性，它提供了编译时类型安全检测机制
-
+  只支持引用数据类型
 - 泛型的好处
 
   1. 把运行时期的问题提前到了编译期间
-  2. 避免了强制类型转换
-
+  2. 避免了强制类型转换，统一了数据类型
+  3. 伪泛型--泛型的擦除
 - 泛型的定义格式
 
   - <类型>: 指定一种类型的格式.尖括号里面可以任意书写,一般只写一个字母.例如: <E> <T>
   - <类型1,类型2…>: 指定多种类型的格式,多种类型之间用逗号隔开.例如: <E,T> <K,V>
 
 
+### 5.2 泛型的细节
+- 泛型中不能写基本数据类型
+- 指定泛型的具体类型后，传递数据时，可以传入该类类型或者其子类类型
+- 如果不写泛型，类型默认是Object
 
+### 5.3 泛型的分类
+
+- 泛型类
+- 泛型方法：<>加在修饰符后面
+- 泛型接口
+  - 实现类给出具体类型
+  - 实现类延续泛型，创建对象时再确定
+
+### 5.4 泛型的继承和通配符
+泛型不具备继承性，但是数据具备继承性
+`ctrl + alt + l` 格式化代码
+
+? extends E: 表示可以传递E或者E所有的子类类型
+? super E:表示可以传递E或者E所有的父类类型
+
+应用场景：
+      1.如果我们在定义类、方法、接口的时候，如果类型不确定，就可以定义泛型类、泛型方法、泛型接口。
+      2.如果类型不确定，但是能知道以后只能传递某个继承体系中的，就可以泛型的通配符
+泛型的通配符：
+    关键点：可以限定类型的范围。
