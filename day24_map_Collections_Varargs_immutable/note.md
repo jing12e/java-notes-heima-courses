@@ -756,25 +756,16 @@ public class A03_TreeMapDemo3 {
 
 **注意：**
 
-```
-1.一个方法只能有一个可变参数
-```
 
+1. 一个方法只能有一个可变参数
+2. 如果方法中有多个参数，可变参数要放到最后。
 
-```
-2.如果方法中有多个参数，可变参数要放到最后。
-```
 
 
 **应用场景: Collections**
 
-```
+
 在Collections中也提供了添加一些元素方法：
-```
-
-
-```
-```
 
 `public static <T> boolean addAll(Collection<T> c, T... elements)  `:往集合中添加一些元素。
 
@@ -799,8 +790,31 @@ public class CollectionsDemo {
 ## 7. Collections类
 
 ### 7.1 Collections常用功能
-
 - `java.utils.Collections`是集合工具类，用来对集合进行操作。
+
+- 在Collections中也提供了添加一些元素方法：
+
+`public static <T> boolean addAll(Collection<T> c, T... elements)  `:往集合中添加一些元素。
+
+**代码演示:**
+
+```java
+public class CollectionsDemo {
+	public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        //原来写法
+        //list.add(12);
+        //list.add(14);
+        //list.add(15);
+        //list.add(1000);
+        //采用工具类 完成 往集合中添加元素  
+        Collections.addAll(list, 5, 222, 1, 2);
+        System.out.println(list);
+    }
+}
+```
+
+
 
   常用方法如下：
 - `public static void shuffle(List<?> list) `:打乱集合顺序。
@@ -826,10 +840,107 @@ public class CollectionsDemo {
 //结果：
 //[50,100, 200, 300]
 ```
+一些其他方法：
+```java
+public class CollectionsDemo2 {
+    public static void main(String[] args) {
+      /*
+        public static <T> void sort(List<T> list)                       排序
+        public static <T> void sort(List<T> list, Comparator<T> c)      根据指定的规则进行排序
+        public static <T> int binarySearch (List<T> list,  T key)       以二分查找法查找元素
+        public static <T> void copy(List<T> dest, List<T> src)          拷贝集合中的元素
+        public static <T> int fill (List<T> list,  T obj)               使用指定的元素填充集合
+        public static <T> void max/min(Collection<T> coll)              根据默认的自然排序获取最大/小值
+        public static <T> void swap(List<?> list, int i, int j)         交换集合中指定位置的元素
+     */
 
+
+        System.out.println("-------------sort默认规则--------------------------");
+        //默认规则，需要重写Comparable接口compareTo方法。Integer已经实现，按照从小打大的顺序排列
+        //如果是自定义对象，需要自己指定规则
+        ArrayList<Integer> list1 = new ArrayList<>();
+        Collections.addAll(list1, 10, 1, 2, 4, 8, 5, 9, 6, 7, 3);
+        Collections.sort(list1);
+        System.out.println(list1);
+
+
+        System.out.println("-------------sort自己指定规则规则--------------------------");
+        Collections.sort(list1, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2 - o1;
+            }
+        });
+        System.out.println(list1);
+
+        Collections.sort(list1, (o1, o2) -> o2 - o1);
+        System.out.println(list1);
+
+        System.out.println("-------------binarySearch--------------------------");
+        //需要元素有序
+        ArrayList<Integer> list2 = new ArrayList<>();
+        Collections.addAll(list2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        System.out.println(Collections.binarySearch(list2, 9));//8
+        System.out.println(Collections.binarySearch(list2, 1));//0
+        System.out.println(Collections.binarySearch(list2, 20));//-11
+
+        System.out.println("-------------copy--------------------------");
+        //把list3中的元素拷贝到list4中
+        //会覆盖原来的元素
+        //注意点：如果list3的长度 > list4的长度，方法会报错
+        ArrayList<Integer> list3 = new ArrayList<>();
+        ArrayList<Integer> list4 = new ArrayList<>();
+        Collections.addAll(list3, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        Collections.addAll(list4, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+        Collections.copy(list4, list3);
+        System.out.println(list3);
+        System.out.println(list4);
+
+        System.out.println("-------------fill--------------------------");
+        //把集合中现有的所有数据，都修改为指定数据
+        ArrayList<Integer> list5 = new ArrayList<>();
+        Collections.addAll(list5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        Collections.fill(list5, 100);
+        System.out.println(list5);
+        //[100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
+
+        System.out.println("-------------max/min--------------------------");
+        //求最大值或者最小值
+        ArrayList<Integer> list6 = new ArrayList<>();
+        Collections.addAll(list6, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        System.out.println(Collections.max(list6));
+        System.out.println(Collections.min(list6));
+
+        System.out.println("-------------max/min指定规则--------------------------");
+        // String中默认是按照字母的abcdefg顺序进行排列的
+        // 现在我要求最长的字符串
+        // 默认的规则无法满足，可以自己指定规则
+        // 求指定规则的最大值或者最小值
+        ArrayList<String> list7 = new ArrayList<>();
+        Collections.addAll(list7, "a","aa","aaa","aaaa");
+        System.out.println(Collections.max(list7, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.length() - o2.length();
+            }
+        }));
+        System.out.println(Collections.max(list7, Comparator.comparingInt(String::length)));
+        System.out.println(Collections.max(list7,(o1, o2) -> o1.length()-o2.length()));
+
+        System.out.println("-------------swap--------------------------");
+        ArrayList<Integer> list8 = new ArrayList<>();
+        Collections.addAll(list8, 1, 2, 3);
+        Collections.swap(list8,0,2);
+        System.out.println(list8);
+        //[3, 2, 1]
+        
+    }
+}
+
+```
 我们的集合按照默认的自然顺序进行了排列，如果想要指定顺序那该怎么办呢？
 
-### 7.2 Comparator比较器
+### 7.2 Comparator比较器指定排序规则
 
 创建一个学生类，存储到ArrayList集合中完成指定排序操作。
 
@@ -876,13 +987,13 @@ public class Demo {
 
 
 
-## 1.不可变集合
+## 8.不可变集合
 
-### 1.1 什么是不可变集合
+### 8.1 什么是不可变集合
 
 是一个长度不可变，内容也无法修改的集合
 
-### 1.2 使用场景
+### 8.2 使用场景
 
 如果某个数据不能被修改，把它防御性地拷贝到不可变集合中是个很好的实践。
 
@@ -898,13 +1009,13 @@ public class Demo {
 2. 斗地主的打牌规则：单张，对子，三张，顺子等，也是不能修改的
 3. 用代码获取的操作系统硬件信息，也是不能被修改的
 
-### 1.3 不可变集合分类
+### 8.3 不可变集合分类
 
 * 不可变的list集合
 * 不可变的set集合
 * 不可变的map集合
 
-### 1.4 不可变的list集合
+### 8.4 不可变的list集合
 
 ```java
 public class ImmutableDemo1 {
@@ -951,7 +1062,7 @@ public class ImmutableDemo1 {
 }
 ```
 
-### 1.5 不可变的Set集合
+### 8.5 不可变的Set集合
 
 ```java
 public class ImmutableDemo2 {
@@ -986,9 +1097,9 @@ public class ImmutableDemo2 {
 }
 ```
 
-### 1.6 不可变的Map集合
+### 8.6 不可变的Map集合
 
-#### 1.6.1 键值对个数小于等于10
+#### 8.6.1 键值对个数小于等于10
 
 ```java
 public class ImmutableDemo3 {
@@ -1028,7 +1139,7 @@ public class ImmutableDemo3 {
 }
 ```
 
-#### 1.6.2 键值对个数大于10
+#### 8.6.2 键值对个数大于10
 
 ```java
 public class ImmutableDemo4 {
