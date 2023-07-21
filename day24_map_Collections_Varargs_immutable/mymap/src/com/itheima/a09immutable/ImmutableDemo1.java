@@ -12,7 +12,7 @@ public class ImmutableDemo1 {
         */
 
         //一旦创建完毕之后，是无法进行修改的，在下面的代码中，只能进行查询操作
-        List<String> list = List.of("张三", "李四", "王五", "赵六");
+        List<String> list = List.of("张三", "张三","李四", "王五", "赵六");
 
         System.out.println(list.get(0));
         System.out.println(list.get(1));
@@ -43,7 +43,7 @@ public class ImmutableDemo1 {
 
         //list.remove("李四");
         //list.add("aaa");
-        list.set(0,"aaa");
+        //list.set(0,"aaa");
     }
 }
 

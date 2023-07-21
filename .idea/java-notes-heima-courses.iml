@@ -7,7 +7,8 @@
       <sourceFolder url="file://$MODULE_DIR$/day23_set_data_structure/myvessel/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/day24_map_Collections_Varargs_immutable/mymap/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/day24_map_Collections_Varargs_immutable/sourceCode" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/day26-stream/exercises/mystream/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day26-stream_method_references/exercises/myfunction/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day26-stream_method_references/exercises/mystream/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
